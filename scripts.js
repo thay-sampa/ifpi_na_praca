@@ -307,7 +307,7 @@ function mostrarResultado() {
     } else if (porcentagem >= 40) {
         mensagem = "Você está no caminho certo. Continue praticando!";
     } else {
-        mensagem = "Continue estudando e tente novamente!";
+        mensagem = "Tente novamente!";
     }
 
     document.getElementById("mensagem").textContent = mensagem;
