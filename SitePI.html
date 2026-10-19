@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Mulheres na Ciência</title>
+
+    <link rel="stylesheet" href="SitePi.css">
+    <script src="sitePi.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+        <h1>Quiz Mulheres na Ciência</h1>
+
+        <section id="quiz">
+            <p id="progresso"></p>
+
+            <div class="barra">
+                <div id="barra-progresso"></div>
+            </div>
+
+            <h2 id="pergunta"></h2>
+
+            <div id="alternativas"></div>
+
+            <p id="feedback" aria-live="polite"></p>
+
+            <button id="confirmar" disabled>
+                Confirmar
+            </button>
+
+            <button id="proxima" hidden>
+                PRÓXIMA PERGUNTA
+            </button>
+        </section>
+
+        <section id="resultado" hidden>
+            <h2>Resultado final</h2>
+
+            <p id="pontuacao"></p>
+            <p id="porcentagem"></p>
+            <p id="mensagem"></p>
+
+            <button id="reiniciar">Refazer questionário</button>
+        </section>
+    </main>
+
+</body>
+</html>

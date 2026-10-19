@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-image: url('img/wlpp2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ecebf7;
+    line-height: 1.5;
+    cursor: default;
+}
+
+/* Cartão principal */
+.container {
+    width: 100%;
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 28px 36px 24px;
+    background: rgba(24, 16, 64, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(160, 136, 240, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+h1,
+h2 {
+    color: #fff;
+    margin: 0;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.3px;
+    margin-bottom: 20px;
+}
+
+/* Progresso */
+#progresso {
+    margin: 0 0 6px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: rgba(236, 235, 247, 0.65);
+}
+
+.barra {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#barra-progresso {
+    height: 100%;
+    width: 0;
+    background: #8f7cf0;
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+/* Pergunta e alternativas */
+#pergunta {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 16px;
+}
+
+#alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.alternativa {
+    display: block;
+    width: 100%;
+    padding: 11px 16px;
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #ecebf7;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(160, 136, 240, 0.2);
+    border-radius: 12px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.alternativa:hover:not(:disabled) {
+    background: rgba(143, 124, 240, 0.12);
+    border-color: rgba(160, 136, 240, 0.45);
+}
+
+.alternativa.selecionada,
+.alternativa.selecionada:hover:not(:disabled) {
+    background: rgba(143, 124, 240, 0.25);
+    border-color: #a594f7;
+}
+
+.alternativa:disabled {
+    cursor: default;
+    color: rgba(236, 235, 247, 0.45);
+}
+
+.alternativa.correta {
+    background: rgba(94, 230, 180, 0.18);
+    border-color: #5ee6b4;
+    color: #fff;
+}
+
+.alternativa.errada {
+    background: rgba(255, 110, 110, 0.16);
+    border-color: #ff8080;
+    color: #fff;
+}
+
+/* Feedback */
+#feedback {
+    min-height: 1.5em;
+    margin: 14px 0 18px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#feedback.acerto {
+    color: #5ee6b4;
+}
+
+#feedback.erro {
+    color: #ff9a9a;
+}
+
+/* Botões */
+button:not(.alternativa) {
+    display: block;
+    margin: 0px auto 10px;
+    padding: 11px 30px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #fff;
+    background: linear-gradient(to right, #4a32c4, #7560e0);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: filter 0.2s, opacity 0.2s;
+}
+
+button:not(.alternativa):hover:not(:disabled) {
+    filter: brightness(1.12);
+}
+
+button:not(.alternativa):disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Resultado */
+#resultado {
+    text-align: center;
+}
+
+#resultado h2 {
+    font-size: 22px;
+    margin-bottom: 28px;
+}
+
+#resultado p {
+    margin: 0 0 10px;
+}
+
+#mensagem {
+    margin-top: 20px !important;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    .container {
+        padding: 22px 18px 20px;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 23px;
+        margin-bottom: 16px;
+    }
+
+    #pergunta {
+        font-size: 16px;
+    }
+
+    .alternativa {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+}
