@@ -198,27 +198,157 @@ button:not(.alternativa):disabled {
     display: none !important;
 }
 
-@media (max-width: 480px) {
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+/* Telas de toque: sem efeito hover (fica "preso" depois do toque)
+   e fundo sem "fixed" (trava ou fica borrado no iPhone/iPad) */
+@media (hover: none) {
     body {
-        padding: 16px;
+        background-attachment: scroll;
+    }
+
+    .alternativa:hover:not(:disabled) {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(160, 136, 240, 0.2);
+    }
+
+    button:not(.alternativa):hover:not(:disabled) {
+        filter: none;
+    }
+}
+
+/* Tablet (retrato e paisagem) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    body {
+        padding: 32px;
     }
 
     .container {
-        padding: 22px 18px 20px;
+        max-width: 720px;
+        padding: 36px 44px 30px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    #progresso {
+        font-size: 15px;
+    }
+
+    .barra {
+        height: 8px;
+    }
+
+    #pergunta {
+        font-size: 21px;
+        margin-bottom: 20px;
+    }
+
+    #alternativas {
+        gap: 12px;
+    }
+
+    .alternativa {
+        min-height: 52px;
+        padding: 14px 20px;
+        font-size: 17px;
+    }
+
+    #feedback {
+        font-size: 16px;
+    }
+
+    button:not(.alternativa) {
+        min-height: 50px;
+        padding: 13px 40px;
+        font-size: 17px;
+    }
+
+    #resultado h2 {
+        font-size: 26px;
+    }
+
+    #resultado p {
+        font-size: 17px;
+    }
+
+    #mensagem {
+        font-size: 19px;
+    }
+}
+
+/* Celular */
+@media (max-width: 599px) {
+    body {
+        padding: 12px;
+        align-items: flex-start;
+    }
+
+    .container {
+        margin: auto 0;
+        padding: 22px 16px 18px;
         border-radius: 16px;
     }
 
     h1 {
-        font-size: 23px;
+        font-size: 22px;
         margin-bottom: 16px;
     }
 
     #pergunta {
-        font-size: 16px;
+        font-size: 17px;
     }
 
     .alternativa {
-        padding: 10px 14px;
-        font-size: 13px;
+        min-height: 48px;
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    #feedback {
+        margin: 12px 0 14px;
+    }
+
+    /* Botões ocupam a largura toda: mais fáceis de tocar com o polegar */
+    button:not(.alternativa) {
+        width: 100%;
+        min-height: 48px;
+        font-size: 16px;
+    }
+
+    #resultado h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Celular deitado (tela baixa): cartão começa no topo e rola normalmente */
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .container {
+        max-width: 760px;
+        padding: 18px 28px 14px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    #alternativas {
+        gap: 6px;
+    }
+
+    .alternativa {
+        min-height: 40px;
+        padding: 8px 14px;
     }
 }
